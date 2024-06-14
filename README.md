@@ -53,7 +53,7 @@ Nun kann die Automatisierung komfortabel auf Knopfdruck gestartet werden.
 
 <div align="center">
     <img src="./Misc_Assets/ausfuehrung.png" alt="Architektur Schema" width="500" />
-</div>
+</div>  
 
 Dies können wir im UiPath Assistant oder auch auf dem UiPath Orchestrator machen. Der Orchestrator ist in der UiPath Automation Cloud zu finden ([Login Link](https://www.uipath.com/de/product/automation-cloud)). Eine regelmässige Ausführung kann man unter dem Tab "Trigger" einrichten. Hier können wir auswählen, dass der Bot täglich um 08:00 Uhr automatisch ausgeführt wird. **Somit sind die Anforderungen erfüllt, dass der Bot automatisch täglich und auch auf Knopfdruck ausgelöst werden kann.**
 

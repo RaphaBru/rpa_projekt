@@ -38,8 +38,24 @@ Die fünf Hauptaufgaben der Automatisierung wurden in separaten Workflow-Sequenz
 **Sequenz 02 "read_pdf"** - Extraktion der relevanten Rechnungsdaten mit *generative AI*. Wir nutzen die OpenAI API mit dem ChatGPT 4o Modell, um die Rechnungsdaten in einem JSON-Format zu speichern.  
 **Sequenz 03 "write_db"** - Die Rechnungsdaten werden in eine MongoDB geschrieben. Ist die Rechnung bereits abgelegt, wird sie nicht nochmals hinzugefügt.  
 **Sequenz 04 "read_db_to_excel"** - Die Rechnungen, welche noch nicht verschickt wurden, werden ermittelt und in einen Excel-Report geschrieben. Sind alle Rechnungen bereits verschickt, wird kein Report erstellt.  
-**Sequenz 05 "email"** - Der Excel-Report wird via E-Mail als Attachment verschickt. Falls bereits alle Rechnungen zugestellt sind, wird eine alternative E-Mail zur Information ausgelöst.
-  
+**Sequenz 05 "email"** - Der Excel-Report wird via E-Mail als Attachment verschickt. Falls bereits alle Rechnungen zugestellt sind, wird eine alternative E-Mail zur Information ausgelöst.  
+
+**Zur Veranschaulichung für die Demo haben wir Message Boxes mit dem Output der ChatGPT-Response im Code. Diese würden selbstverständlich für eine Live-Umgebung entfernt, damit der Bot vollautomatisiert laufen kann.**
+
+_____________________________
+
+## Orchestrierung
+Das Projekt kann im UiPath Studio mit dem Button "Veröffentlichen" (ganz rechts in der Menüleiste) in den Orchestrator geladen werden.  
+
+Anschliessend kann die Installation im Ui Path Assistant abgeschlossen werden.  
+
+Nun kann die Automatisierung komfortabel auf Knopfdruck gestartet werden.  
+
+<div align="center">
+    <img src="./Misc_Assets/ausfuehrung.png" alt="Architektur Schema" width="300" />
+</div>
+
+
 _____________________________
 
 ## Alternative zur Datenextraktion: OLLAMA

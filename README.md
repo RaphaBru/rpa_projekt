@@ -18,8 +18,6 @@ _____________________________
 
 ## Überblick
 
-Die Links führen direkt zu den Dokumenten.
-
 - [UiPath](./UiPath) - Code des Projekts.
 - [Requirements](./Dokumente/Requirements.pdf) - Aufzählung, was für die Ausführung der Automatisierung benötigt wird.
 - [Beispiel Logfile](./Dokumente/Beispiel_Logfile.txt) - Zur Veranschaulichung: das Logfile einer erfolgreichen Durchführung.
@@ -28,7 +26,7 @@ Die Links führen direkt zu den Dokumenten.
 - [Datenmodell](./Dokumente/Datenmodell.pdf) - Beschreibung des Datenmodells.
 - [Datentestspezifikation](./Dokumente/Datentestspezifikation.pdf) - Testspezifikationen zu den Daten.
 - [Codemodell](./Dokumente/Codemodell.pdf) - Beschreibung des Codemodells.
-- [Codetestspezifikation](./Dokumente/Codetestspezifikation.pdf) - Testspezifikationen zum Code
+- [Codetestspezifikation](./Dokumente/Codetestspezifikation.pdf) - Testspezifikationen zum Code.
 
 _____________________________
 

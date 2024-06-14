@@ -14,3 +14,10 @@ Die funktionierende Automatisierung wird in einer Demo vorgestellt:
 - [Datentestspezifikation](Datentestspezifikation.pdf) - Testspezifikationen zu den Daten.
 - [Codemodell](Codemodell.pdf) - Beschreibung des Codemodells.
 - [Codetestspezifikation](Codetestspezifikation.pdf) Testspezifikationen zum Code
+
+
+**Gruppenmitglieder:**
+- Silvano Stupan
+- Joshua Kohler
+- Daniel Schafhäutle
+- Raphael Brunold

@@ -16,18 +16,6 @@ Die funktionierende Automatisierung wird in einer Demo vorgestellt:
 
 _____________________________
 
-## Beschreibung des Projekts
-
-Die fünf Hauptaufgaben der Automatisierung wurden in Separaten Workflow-Sequenzen implementiert. Der Main-Workflow ruft die fünf Frequenzen auf:
-
-**Sequenz 01 "get_pdf"** - Webscraping aller PDF-Rechnungen.  
-**Sequenz 02 "read_pdf"** - Extraktion der relevanten Rechnungsdaten mit *generative AI*. Wir nutzen die OpenAI API mit dem ChatGPT 4.o Modell, um die Rechnungsdaten in einem JSON-Format zu speichern.  
-**Sequenz 03 "write_db"** - Die Rechnungsdaten werden in eine MongoDB geschrieben. Ist die Rechnung bereits abgelegt, wird sie nicht nochmals hinzugefügt.  
-**Sequenz 04 "read_db_to_excel"** - Die Rechnungen, welche noch nicht verschickt wurden, werden ermittelt und in einen Excel-Report geschrieben. Sind alle Rechnungen bereits verschickt, wird kein Report erstellt.  
-**Sequenz 05 "email"** - Der Excel-Report wird via E-Mail als Attachment verschickt. Falls bereits alle Rechnungen zugestellt sind, wird eine alternative E-Mail zur Information ausgelöst.
-
-_____________________________
-
 ## Überblick
 
 - [UiPath](UiPath) - Code des Projekts.
@@ -39,6 +27,19 @@ _____________________________
 - [Datentestspezifikation](Dokumente/Datentestspezifikation.pdf) - Testspezifikationen zu den Daten.
 - [Codemodell](Dokumente/Codemodell.pdf) - Beschreibung des Codemodells.
 - [Codetestspezifikation](Dokumente/Codetestspezifikation.pdf) - Testspezifikationen zum Code
+
+_____________________________
+
+
+## Beschreibung des Projekts
+
+Die fünf Hauptaufgaben der Automatisierung wurden in Separaten Workflow-Sequenzen implementiert. Der Main-Workflow ruft die fünf Frequenzen auf:
+
+**Sequenz 01 "get_pdf"** - Webscraping aller PDF-Rechnungen.  
+**Sequenz 02 "read_pdf"** - Extraktion der relevanten Rechnungsdaten mit *generative AI*. Wir nutzen die OpenAI API mit dem ChatGPT 4.o Modell, um die Rechnungsdaten in einem JSON-Format zu speichern.  
+**Sequenz 03 "write_db"** - Die Rechnungsdaten werden in eine MongoDB geschrieben. Ist die Rechnung bereits abgelegt, wird sie nicht nochmals hinzugefügt.  
+**Sequenz 04 "read_db_to_excel"** - Die Rechnungen, welche noch nicht verschickt wurden, werden ermittelt und in einen Excel-Report geschrieben. Sind alle Rechnungen bereits verschickt, wird kein Report erstellt.  
+**Sequenz 05 "email"** - Der Excel-Report wird via E-Mail als Attachment verschickt. Falls bereits alle Rechnungen zugestellt sind, wird eine alternative E-Mail zur Information ausgelöst.
   
 _____________________________
 
@@ -48,7 +49,7 @@ Für die Datenextraktion haben wir eine Alternative mit dem lokalen Open-Source-
 
 Wir haben für das Endprodukt die OpenAI API verwendet, weil diese im allgemeiner einfacher zu implementieren ist und eine bessere "Plug-and-Play"-Lösung für unsere Automatisierung bietet. Die Einrichtung von OLLAMA war komplexer und hat nicht bei allen Gruppenmitgliedern funktioniert. Nichtsdestotrotz ist OLLAMA eine attraktive Alternative in Hinsicht auf verschiedene Gründe wie Datenschutz, Kosten oder Flexibilität. 
 
-Wir haben deshalb ein [Dokument](Dokumente/OLLAMA_Set_up.pdf) erstellt, welches das Set-up der Lösung mit OLLAMA aufzeigt.
+Wir haben deshalb ein [Dokument](Dokumente/OLLAMA_Set_up.pdf) erstellt, welches das Set-up der Lösung mit OLLAMA schildert.
 
 _____________________________
   
@@ -57,3 +58,5 @@ _____________________________
 - Joshua Kohler
 - Daniel Schafhäutle
 - Raphael Brunold
+
+_____________________________

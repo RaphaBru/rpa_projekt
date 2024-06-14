@@ -52,7 +52,7 @@ Anschliessend kann die Installation im Ui Path Assistant abgeschlossen werden.
 Nun kann die Automatisierung komfortabel auf Knopfdruck gestartet werden.  
 
 <div align="center">
-    <img src="./Misc_Assets/ausfuehrung.png" alt="Architektur Schema" width="300" />
+    <img src="./Misc_Assets/ausfuehrung.png" alt="Architektur Schema" width="500" />
 </div>
 
 

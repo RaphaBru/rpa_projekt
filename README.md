@@ -84,3 +84,7 @@ Diese Abbildung zeigt schematisch den Ablauf unserer Automatisierung:
 <div align="center">
     <img src="./Misc_Assets/Architekturmodell_beschriftet.png" alt="Architektur Schema" width="550" />
 </div>
+
+_____________________________
+
+Viel Spass beim Automatisieren!

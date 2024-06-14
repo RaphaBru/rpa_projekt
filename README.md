@@ -69,4 +69,3 @@ Diese Abbildung zeigt schematisch den Ablauf unserer Automatisierung:
 </div>
 
 _____________________________
-ollama pull mistral

@@ -55,6 +55,7 @@ Nun kann die Automatisierung komfortabel auf Knopfdruck gestartet werden.
     <img src="./Misc_Assets/ausfuehrung.png" alt="Architektur Schema" width="500" />
 </div>
 
+Dies können wir im UiPath Assistant oder auch auf dem UiPath Orchestrator machen. Der Orchestrator ist in der UiPath Automation Cloud zu finden ([Login Link](https://www.uipath.com/de/product/automation-cloud)). Eine regelmässige Ausführung kann man unter dem Tab "Trigger" einrichten. Hier können wir auswählen, dass der Bot täglich um 08:00 Uhr automatisch ausgeführt wird. **Somit sind die Anforderungen erfüllt, dass der Bot automatisch täglich und auch auf Knopfdruck ausgelöst werden kann.**
 
 _____________________________
 
@@ -62,7 +63,7 @@ _____________________________
 
 Für die Datenextraktion haben wir ursprünglich eine Alternative mit einem **lokalen Open-Source Large Language Model** implementiert. **OLLAMA** bietet ein Frontend für das Herunterladen und die Nutzung lokaler Open-Source LLMs.
 
-Wir haben für das Endprodukt die OpenAI API verwendet, weil diese in UiPath im Allgemeinen einfacher zu implementieren ist und eine bessere "Plug-and-Play"-Lösung für unsere Automatisierung bietet. Die Einrichtung von OLLAMA hat nicht bei allen Gruppenmitgliedern einwandfrei funktioniert. Nichtsdestotrotz ist OLLAMA eine attraktive Alternative in Hinsicht auf verschiedene Aspekte wie Datenschutz, Kosten oder Flexibilität. 
+Wir haben für das Endprodukt die OpenAI API verwendet, weil diese in UiPath im Allgemeinen einfacher zu implementieren ist und eine bessere "Plug-and-Play"-Lösung für unsere Automatisierung bietet. Die Einrichtung von OLLAMA hat nicht bei allen Gruppenmitgliedern einwandfrei funktioniert. Nichtsdestotrotz ist OLLAMA eine attraktive Alternative in Hinsicht auf verschiedene Aspekte wie Datenschutz, Kosten oder Flexibilität.  
 
 Wir haben deshalb ein [Dokument](Dokumente/OLLAMA_Set_up.pdf) erstellt, welches das Set-up der Lösung mit OLLAMA schildert.
 

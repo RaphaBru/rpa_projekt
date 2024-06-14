@@ -64,5 +64,5 @@ _____________________________
 ## Schematische Darstellung
 
 <div align="center">
-    <img src="./Misc_Assets/Architekturmodell_beschriftet.png" alt="RPA Mascot (generated with Midjourney)" width="550" />
+    <img src="./Misc_Assets/Architekturmodell_beschriftet.png" alt="Architektur Schema" width="550" />
 </div>

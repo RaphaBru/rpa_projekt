@@ -44,9 +44,9 @@ _____________________________
 
 ## Alternative zur Datenextraktion: OLLAMA
 
-Für die Datenextraktion haben wir ursprünglich eine Alternative mit dem lokalen Open-Source-LLM **OLLAMA** implementiert. 
+Für die Datenextraktion haben wir ursprünglich eine Alternative mit einem **lokalen Open-Source Large Language Model** implementiert. OLLAMA bietet ein Interface für das Herunterladen und die Nutzung lokaler Open-Source LLMs.
 
-Wir haben für das Endprodukt die OpenAI API verwendet, weil diese im Allgemeinen einfacher zu implementieren ist und eine bessere "Plug-and-Play"-Lösung für unsere Automatisierung bietet. Die Einrichtung von OLLAMA war komplexer und hat nicht bei allen Gruppenmitgliedern einwandfrei funktioniert. Nichtsdestotrotz ist OLLAMA eine attraktive Alternative in Hinsicht auf verschiedene Aspekte wie Datenschutz, Kosten oder Flexibilität. 
+Wir haben für das Endprodukt die OpenAI API verwendet, weil diese im Allgemeinen einfacher zu implementieren ist und eine bessere "Plug-and-Play"-Lösung für unsere Automatisierung bietet. Die Einrichtung von OLLAMA hat nicht bei allen Gruppenmitgliedern einwandfrei funktioniert. Nichtsdestotrotz ist OLLAMA eine attraktive Alternative in Hinsicht auf verschiedene Aspekte wie Datenschutz, Kosten oder Flexibilität. 
 
 Wir haben deshalb ein [Dokument](Dokumente/OLLAMA_Set_up.pdf) erstellt, welches das Set-up der Lösung mit OLLAMA schildert.
 

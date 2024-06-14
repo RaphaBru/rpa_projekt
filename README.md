@@ -18,6 +18,8 @@ _____________________________
 
 ## Überblick
 
+Die Links führen direkt zu den Dokumenten.
+
 - [UiPath](./UiPath) - Code des Projekts.
 - [Requirements](./Dokumente/Requirements.pdf) - Aufzählung, was für die Ausführung der Automatisierung benötigt wird.
 - [Beispiel Logfile](./Dokumente/Beispiel_Logfile.txt) - Zur Veranschaulichung: das Logfile einer erfolgreichen Durchführung.

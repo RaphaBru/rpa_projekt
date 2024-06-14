@@ -60,3 +60,9 @@ _____________________________
 - Raphael Brunold
 
 _____________________________
+
+## Schematische Darstellung
+
+<div align="center">
+    <img src="./Misc_Assets/Architekturmodell_beschriftet.png" alt="RPA Mascot (generated with Midjourney)" width="550" />
+</div>

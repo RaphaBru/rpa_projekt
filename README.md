@@ -41,7 +41,7 @@ _____________________________
 - [Architekturmodell](Dokumente/Architekturmodell.pdf) - Beschreibung des Architekturmodells.
 - [Architekturtestspezifikation](Dokumente/Architekturtestspezifikation.pdf) - Testspezifikationen zur Architektur.
 - [Datenmodell](Dokumente/Datenmodell.pdf) - Beschreibung des Datenmodells.
-- [Datentestspezifikation]Dokumente/(Datentestspezifikation.pdf) - Testspezifikationen zu den Daten.
+- [Datentestspezifikation](Dokumente/Datentestspezifikation.pdf) - Testspezifikationen zu den Daten.
 - [Codemodell](Dokumente/Codemodell.pdf) - Beschreibung des Codemodells.
 - [Codetestspezifikation](Dokumente/Codetestspezifikation.pdf) - Testspezifikationen zum Code
   

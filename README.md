@@ -2,6 +2,11 @@
 
 Dieses Repository wurde einerseits für die Versionenkontrolle und die kollaborative Mitarbeit des Teams genutzt und dient andererseits als Wekzeug zur Präsentation und Abgabe der Resultate.
 
+<div align="center">
+    <img src="./Misc_Assets/midjourney_robot.png" alt="RPA Mascot (generated with Midjourney)" width="300" />
+    <p><em>RPA-Bot (generiert mit MidJourney)</em></p>
+</div>
+
 _____________________________
 
 ## Demo-Video
@@ -23,16 +28,6 @@ Die fünf Hauptaufgaben der Automatisierung wurden in Separaten Workflow-Sequenz
 
 _____________________________
 
-## Alternative zur Datenextraktion: OLLAMA
-
-Für die Datenextraktion haben wir eine Alternative mit dem lokalen Open-Source-LLM **OLLAMA** implementiert. 
-
-Wir haben für das Endprodukt die OpenAI API verwendet, weil diese im allgemeiner einfacher zu implementieren ist und eine bessere "Plug-and-Play"-Lösung für unsere Automatisierung bietet. Die Einrichtung von OLLAMA war komplexer und hat nicht bei allen Gruppenmitgliedern funktioniert. Nichtsdestotrotz ist OLLAMA eine attraktive Alternative in Hinsicht auf verschiedene Gründe wie Datenschutz, Kosten oder Flexibilität. 
-
-Wir haben deshalb ein [Dokument](Dokumente/OLLAMA_Set_up.pdf) erstellt, welches das Set-up der Lösung mit OLLAMA aufzeigt.
-
-_____________________________
-
 ## Überblick
 
 - [UiPath](UiPath) - Code des Projekts.
@@ -45,9 +40,19 @@ _____________________________
 - [Codemodell](Dokumente/Codemodell.pdf) - Beschreibung des Codemodells.
 - [Codetestspezifikation](Dokumente/Codetestspezifikation.pdf) - Testspezifikationen zum Code
   
+_____________________________
 
+## Alternative zur Datenextraktion: OLLAMA
+
+Für die Datenextraktion haben wir eine Alternative mit dem lokalen Open-Source-LLM **OLLAMA** implementiert. 
+
+Wir haben für das Endprodukt die OpenAI API verwendet, weil diese im allgemeiner einfacher zu implementieren ist und eine bessere "Plug-and-Play"-Lösung für unsere Automatisierung bietet. Die Einrichtung von OLLAMA war komplexer und hat nicht bei allen Gruppenmitgliedern funktioniert. Nichtsdestotrotz ist OLLAMA eine attraktive Alternative in Hinsicht auf verschiedene Gründe wie Datenschutz, Kosten oder Flexibilität. 
+
+Wir haben deshalb ein [Dokument](Dokumente/OLLAMA_Set_up.pdf) erstellt, welches das Set-up der Lösung mit OLLAMA aufzeigt.
+
+_____________________________
   
-**Gruppenmitglieder:**  
+## Gruppe 
 - Silvano Stupan
 - Joshua Kohler
 - Daniel Schafhäutle

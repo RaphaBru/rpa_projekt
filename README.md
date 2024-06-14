@@ -26,7 +26,7 @@ Die fünf Hauptaufgaben der Automatisierung wurden in Separaten Workflow-Sequenz
   
 
   
-**Gruppenmitglieder:**
+**Gruppenmitglieder:**  
 - Silvano Stupan
 - Joshua Kohler
 - Daniel Schafhäutle

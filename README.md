@@ -19,6 +19,7 @@ _____________________________
 ## Überblick
 
 - [UiPath](./UiPath) - Code des Projekts.
+- [UiPath Images](./Misc_Assets/UiPath_images) - Bilder der UiPath Workflows.
 - [Requirements](./Dokumente/Requirements.pdf) - Aufzählung, was für die Ausführung der Automatisierung benötigt wird.
 - [Beispiel Logfile](./Dokumente/Beispiel_Logfile.txt) - Zur Veranschaulichung: das Logfile einer erfolgreichen Durchführung.
 - [OLLAMA Setup](./Dokumente/OLLAMA_Set_up.pdf) (optional) - Tutorial, wie man ein lokales LLM mit OLLAMA aufsetzen kann.

@@ -9,26 +9,11 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "02_read_pdf_old.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "response_text&Sequence_1",
-        "pdf_file_list&Sequence_1",
-        "new_pdf_path&Sequence_1",
-        "date_today&Sequence_1",
-        "response&Sequence_1",
-        "pdf_text&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "report_path&Sequence_1",
         "response_text&Sequence_1",
-        "new_pdf_path&Sequence_1",
         "pdf_file_list&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
@@ -68,8 +53,8 @@
         "response&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
-        "out_response_text",
-        "in_pdf_file"
+        "in_pdf_file",
+        "out_response_text"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -78,7 +63,10 @@
       "Path": "03_write_db.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "variable1&Sequence_2",
+        "parsed_json&Sequence_2",
+        "company&Sequence_2",
+        "amount&Sequence_2",
+        "query_results&Sequence_2",
         "invoiceNr&Sequence_2",
         "collection_list&Sequence_2",
         "databases_list&Sequence_2",
@@ -93,16 +81,32 @@
     {
       "Path": "04_read_db_to_excel.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
-      "ArgumentsSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "date_time_string&Sequence_21",
+        "report_path&Sequence_1",
+        "dtrow&Sequence_7",
+        "invoice_json&Sequence_7",
+        "invoice_table&Sequence_2",
+        "databases_list&Sequence_2",
+        "collection_list&Sequence_2",
+        "unforwarded_invoice_list&Sequence_2",
+        "time_of_query&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_report_path"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
     {
       "Path": "05_email.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
-      "ArgumentsSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "report_path&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_report_path"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }

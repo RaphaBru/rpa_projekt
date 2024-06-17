@@ -50,7 +50,9 @@ Das Projekt kann im UiPath Studio mit dem Button "Veröffentlichen" (ganz rechts
 
 Anschliessend kann die Installation im Ui Path Assistant abgeschlossen werden.  
 
-Nun kann die Automatisierung komfortabel auf Knopfdruck gestartet werden.  
+Nun kann die Automatisierung komfortabel auf Knopfdruck gestartet werden. 
+
+Im UiPath Assistant kann man unter *weitere Aktionen* (drei Punkte) eine Desktopverknüpfung für den Start der Automatisierung erstellen.  
 
 <div align="center">
     <img src="./Misc_Assets/ausfuehrung.png" alt="Architektur Schema" width="500" />

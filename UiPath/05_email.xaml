@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>829.3333333333334,4575.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>743.3333333333334,4544</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_05_email_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,7 +105,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="_05_email" sap:VirtualizedContainerService.HintSize="668,4510.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Send the report via email." DisplayName="_05_email" sap:VirtualizedContainerService.HintSize="668,4479.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="report_path" />
     </Sequence.Variables>
@@ -183,7 +183,7 @@
             </umab:OutlookApplicationCard.Body>
           </umab:OutlookApplicationCard>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Email with excel report attachment sent.&quot;]" />
-          <If sap2010:Annotation.AnnotationText="Clean-up:&#xD;&#xA;Archive report in folder reports/old&#xD;&#xA;" Condition="[File.Exists(report_path)]" sap:VirtualizedContainerService.HintSize="530,730" sap2010:WorkflowViewState.IdRef="If_5">
+          <If sap2010:Annotation.AnnotationText="Clean-up:&#xA;Archive report in folder reports/old&#xA;" Condition="[File.Exists(report_path)]" sap:VirtualizedContainerService.HintSize="530,730" sap2010:WorkflowViewState.IdRef="If_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>

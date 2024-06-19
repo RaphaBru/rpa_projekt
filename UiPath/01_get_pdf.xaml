@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>858,7911.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>858,8970</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -117,7 +117,7 @@
       <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Scrape all pdfs from the website." DisplayName="_01_get_pdf" sap:VirtualizedContainerService.HintSize="868,7846.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Scrape all pdfs from the website." DisplayName="_01_get_pdf" sap:VirtualizedContainerService.HintSize="868,8905.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="new_pdf_path" />
     </Sequence.Variables>
@@ -213,13 +213,14 @@
       </If>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Checked pdf folders.&quot;]" />
     </Sequence>
-    <Sequence DisplayName="Sequence - Browser" sap:VirtualizedContainerService.HintSize="806,4803.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence sap2010:Annotation.AnnotationText="Webscraping starts after the initial setup above." DisplayName="Sequence - Browser" sap:VirtualizedContainerService.HintSize="806,5862" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="url" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="744,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Starting webscraping.&quot;]" />
@@ -231,20 +232,63 @@
           <InArgument x:TypeArguments="x:String">https://rpa-project.maechler-thomas.ch/</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="744,4382.666666666667" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[url]">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="744,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Opening browser.&quot;]" />
+      <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="All avtivities within the browser (edge)." BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="744,5226" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[url]">
         <ui:OpenBrowser.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <Sequence sap2010:Annotation.AnnotationText="Remember to have the Browser Extension installed and enabled" DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="710,4255.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence sap2010:Annotation.AnnotationText="Remember to have the Browser Extension installed and enabled" DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="710,5068" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="648,25.333333333333332" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+              <Delay sap2010:Annotation.AnnotationText="Wait for a moment, as the browser sometimes takes a second to open properly" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="648,137.33333333333334" sap2010:WorkflowViewState.IdRef="Delay_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Delay>
+              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe RPA'" sap:VirtualizedContainerService.HintSize="648,365.3333333333333" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="ef2e861f827b92675c37a9b8c79b1045" Selector="&lt;html app='msedge.exe' title='RPA Praxisaufgabe' /&gt;">
+                <ui:BrowserScope.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Activate 'pane'" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="Activate_2">
+                        <ui:Activate.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d05f6929-2499-4fe1-8267-2317f821a28a" InformativeScreenshot="01692a4b06f0d6f41da38b20c6558fd5" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='RPA Praxisaufgabe - Profil 1 – Microsoft​ Edge' /&gt;&lt;ctrl name='RPA Praxisaufgabe - Microsoft Edge' role='pane' /&gt;&lt;ctrl idx='98' role='pane' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Activate.Target>
+                      </ui:Activate>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:BrowserScope.Body>
+              </ui:BrowserScope>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="648,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Attached to browser.&quot;]" />
+              <ui:MaximizeWindow Window="{x:Null}" sap2010:Annotation.AnnotationText="For better reliability, window is maximized." DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="648,70.66666666666667" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:MaximizeWindow>
               <Sequence sap2010:Annotation.AnnotationText="Depending on language settings, Edge will sometimes offer to translate the website with a pop-up window. If the pop-up is there, let's close it." DisplayName="Sequence - Remove Translation Dialogue" sap:VirtualizedContainerService.HintSize="648,743.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_17">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="translation_popup_exists" />
@@ -257,10 +301,7 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:UiElementExists sap2010:Annotation.AnnotationText="Will return True (boolean) if the element exists." DisplayName="Element Exists 'dialog Seite'" Exists="[translation_popup_exists]" sap:VirtualizedContainerService.HintSize="410,138" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                   <ui:UiElementExists.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="37e70486-d49b-4970-afa5-5178db8fb20d" InformativeScreenshot="7ce51a839933500a2173da5a56efe0d4" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Seite aus der Sprache Englisch übersetzen?' /&gt;&lt;ctrl name='Seite aus der Sprache Englisch übersetzen?' role='dialog' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="37e70486-d49b-4970-afa5-5178db8fb20d" InformativeScreenshot="7ce51a839933500a2173da5a56efe0d4" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Seite aus der Sprache Englisch übersetzen?' /&gt;&lt;ctrl name='Seite aus der Sprache Englisch übersetzen?' role='dialog' /&gt;" TimeoutMS="150">
                       <ui:Target.WaitForReady>
                         <InArgument x:TypeArguments="ui:WaitForReady" />
                       </ui:Target.WaitForReady>
@@ -541,7 +582,7 @@
         </ui:OpenBrowser.Body>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:OpenBrowser>

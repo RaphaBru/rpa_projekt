@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>829.3333333333334,9442.666666666666</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>743.3333333333334,9428</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_04_read_db_to_csv_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -131,7 +131,7 @@
       <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="_04_read_db_to_csv" sap:VirtualizedContainerService.HintSize="710,9378" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Fetch all invoices from the database which have not been forwarded and write them into an excel report." DisplayName="_04_read_db_to_csv" sap:VirtualizedContainerService.HintSize="710,9363.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="report_path" />
     </Sequence.Variables>
@@ -149,7 +149,7 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Checking for report folders.&quot;]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Checking for report folders.&quot;]" />
       <If Condition="[Not Directory.Exists(&quot;reports&quot;)]" sap:VirtualizedContainerService.HintSize="410,538" sap2010:WorkflowViewState.IdRef="If_6">
         <If.Then>
           <Sequence sap:VirtualizedContainerService.HintSize="376,354" sap2010:WorkflowViewState.IdRef="Sequence_15">

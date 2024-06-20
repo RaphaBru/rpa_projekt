@@ -69,7 +69,7 @@ Für die Datenextraktion haben wir ursprünglich eine Alternative mit einem **lo
 
 Wir haben für das Endprodukt die OpenAI API verwendet, weil diese in UiPath im Allgemeinen einfacher zu implementieren ist und eine bessere "Plug-and-Play"-Lösung für unsere Automatisierung bietet. Die Einrichtung von OLLAMA hat nicht bei allen Gruppenmitgliedern einwandfrei funktioniert. Nichtsdestotrotz ist OLLAMA eine attraktive Alternative in Hinsicht auf verschiedene Aspekte wie Datenschutz, Kosten oder Flexibilität.  
 
-Wir haben deshalb ein [Dokument](./Dokumente/OLLAMA_Set_up.pdf) erstellt, welches das Set-up der Lösung mit OLLAMA schildert. Zusätzlich haben wir ein [Python-Script](./Misc_Assets/Python_script_OLLAMA/) abgelegt.  
+Wir haben deshalb ein [Dokument](./Dokumente/OLLAMA_Set_up.pdf) erstellt, welches das Set-up der Lösung mit OLLAMA schildert. Zusätzlich haben wir ein [Python-Script](./Misc_Assets/Python_script_OLLAMA/) als Beispiel abgelegt.  
 
 _____________________________
 

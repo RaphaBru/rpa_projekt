@@ -12,7 +12,7 @@ _____________________________
 ## Demo-Video
 
 Die funktionierende Automatisierung wird in einer Demo vorgestellt:
-[Link zum Demo-Video](https://photos.onedrive.com/share/3083D8FE9F20F472!600763?cid=3083D8FE9F20F472&resId=3083D8FE9F20F472!600763&authkey=!AGHJWZlXzTnmB2M&ithint=video&e=FbJku4)
+[Link zum Demo-Video](https://1drv.ms/v/s!AnL0IJ_-2IMwpONSZcZ1_MSQub-jng?e=ml4qvh)
 
 _____________________________
 

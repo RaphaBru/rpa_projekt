@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uasf="clr-namespace:UiPath.Activities.System.FileOperations;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:uasf="clr-namespace:UiPath.Activities.System.FileOperations;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_pdf_file_list" Type="OutArgument(s:String[])" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>858,8970</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>862.6666666666666,9726</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -52,6 +52,8 @@
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
       <x:String>UiPath.Activities.System.FileOperations</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -115,9 +117,12 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
       <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Scrape all pdfs from the website." DisplayName="_01_get_pdf" sap:VirtualizedContainerService.HintSize="868,8905.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Scrape all pdfs from the website." DisplayName="_01_get_pdf" sap:VirtualizedContainerService.HintSize="872.6666666666666,9661.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="new_pdf_path" />
     </Sequence.Variables>
@@ -127,8 +132,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="806,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;----- Starting Sequence 01 -----&quot;]" />
-    <Sequence sap2010:Annotation.AnnotationText="This sequence prepares the folders for handling the pdfs. If the folders don't already exist, we create them." DisplayName="Sequence - Prepare Folders (PDF)" sap:VirtualizedContainerService.HintSize="806,2410.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="810.6666666666666,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;----- Starting Sequence 01 -----&quot;]" />
+    <Sequence sap2010:Annotation.AnnotationText="This sequence prepares the folders for handling the pdfs. If the folders don't already exist, we create them." DisplayName="Sequence - Prepare Folders (PDF)" sap:VirtualizedContainerService.HintSize="810.6666666666666,2410.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_14">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="pdf_path" />
         <Variable x:TypeArguments="x:String" Name="old_pdf_path" />
@@ -213,7 +218,7 @@
       </If>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Checked pdf folders.&quot;]" />
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="Webscraping starts after the initial setup above." DisplayName="Sequence - Browser" sap:VirtualizedContainerService.HintSize="806,5862" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence sap2010:Annotation.AnnotationText="Webscraping starts after the initial setup above." DisplayName="Sequence - Browser" sap:VirtualizedContainerService.HintSize="810.6666666666666,6618" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="url" />
       </Sequence.Variables>
@@ -223,8 +228,8 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="744,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Starting webscraping.&quot;]" />
-      <Assign sap:VirtualizedContainerService.HintSize="744,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="748.6666666666666,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Starting webscraping.&quot;]" />
+      <Assign sap:VirtualizedContainerService.HintSize="748.6666666666666,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[url]</OutArgument>
         </Assign.To>
@@ -232,28 +237,28 @@
           <InArgument x:TypeArguments="x:String">https://rpa-project.maechler-thomas.ch/</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="744,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Opening browser.&quot;]" />
-      <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="All avtivities within the browser (edge)." BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="744,5226" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[url]">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="748.6666666666666,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Opening browser.&quot;]" />
+      <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="All avtivities within the browser (edge)." BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="748.6666666666666,5982" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[url]">
         <ui:OpenBrowser.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <Sequence sap2010:Annotation.AnnotationText="Remember to have the Browser Extension installed and enabled" DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="710,5068" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence sap2010:Annotation.AnnotationText="Remember to have the Browser Extension installed and enabled" DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="714.6666666666666,5824" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Delay sap2010:Annotation.AnnotationText="Wait for a moment, as the browser sometimes takes a second to open properly" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="648,137.33333333333334" sap2010:WorkflowViewState.IdRef="Delay_1">
+              <Delay sap2010:Annotation.AnnotationText="Wait for a moment, as the browser sometimes takes a second to open properly" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="652.6666666666666,137.33333333333334" sap2010:WorkflowViewState.IdRef="Delay_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </Delay>
-              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe RPA'" sap:VirtualizedContainerService.HintSize="648,365.3333333333333" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="ef2e861f827b92675c37a9b8c79b1045" Selector="&lt;html app='msedge.exe' title='RPA Praxisaufgabe' /&gt;">
+              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe RPA'" sap:VirtualizedContainerService.HintSize="652.6666666666666,365.3333333333333" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="ef2e861f827b92675c37a9b8c79b1045" Selector="&lt;html app='msedge.exe' title='RPA Praxisaufgabe' /&gt;">
                 <ui:BrowserScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
@@ -281,15 +286,15 @@
                   </ActivityAction>
                 </ui:BrowserScope.Body>
               </ui:BrowserScope>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="648,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Attached to browser.&quot;]" />
-              <ui:MaximizeWindow Window="{x:Null}" sap2010:Annotation.AnnotationText="For better reliability, window is maximized." DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="648,70.66666666666667" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="652.6666666666666,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Attached to browser.&quot;]" />
+              <ui:MaximizeWindow Window="{x:Null}" sap2010:Annotation.AnnotationText="For better reliability, window is maximized." DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="652.6666666666666,70.66666666666667" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MaximizeWindow>
-              <Sequence sap2010:Annotation.AnnotationText="Depending on language settings, Edge will sometimes offer to translate the website with a pop-up window. If the pop-up is there, let's close it." DisplayName="Sequence - Remove Translation Dialogue" sap:VirtualizedContainerService.HintSize="648,743.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <Sequence sap2010:Annotation.AnnotationText="Depending on language settings, Edge will sometimes offer to translate the website with a pop-up window. If the pop-up is there, let's close it." DisplayName="Sequence - Remove Translation Dialogue" sap:VirtualizedContainerService.HintSize="652.6666666666666,743.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_17">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="translation_popup_exists" />
                 </Sequence.Variables>
@@ -355,7 +360,7 @@
                   </If.Else>
                 </If>
               </Sequence>
-              <Sequence DisplayName="Sequence - Download PDFs Page 1" sap:VirtualizedContainerService.HintSize="648,1612.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_18">
+              <Sequence DisplayName="Sequence - Download PDFs Page 1" sap:VirtualizedContainerService.HintSize="652.6666666666666,1990.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_18">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="children" />
                 </Sequence.Variables>
@@ -364,7 +369,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  2.html'" sap:VirtualizedContainerService.HintSize="586,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  2.html'" sap:VirtualizedContainerService.HintSize="590.6666666666666,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
                   <ui:Click.CursorPosition>
                     <ui:CursorPosition Position="Center">
                       <ui:CursorPosition.OffsetX>
@@ -386,7 +391,7 @@
                     </ui:Target>
                   </ui:Click.Target>
                 </ui:Click>
-                <ui:FindChildren Children="[children]" ContinueOnError="True" DisplayName="Find Children 'UL'" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="586,107.33333333333333" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_DESCENDANTS">
+                <ui:FindChildren Children="[children]" ContinueOnError="True" DisplayName="Find Children 'UL'" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="590.6666666666666,107.33333333333333" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_DESCENDANTS">
                   <ui:FindChildren.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d994c665-b4c7-40b7-a5a9-b7b7eb03190c" InformativeScreenshot="48899d382a570030bcb0a9069d146702" Selector="&lt;webctrl tag='UL' /&gt;" WaitForReady="INTERACTIVE">
                       <ui:Target.TimeoutMS>
@@ -400,13 +405,13 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:FindChildren>
-                <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="586,1022.6666666666666" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[children]">
+                <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="590.6666666666666,1400.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[children]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="ui:UiElement">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="ui:UiElement" Name="current_child" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Hauptteil" sap:VirtualizedContainerService.HintSize="552,832.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                      <Sequence DisplayName="Hauptteil" sap:VirtualizedContainerService.HintSize="556.6666666666666,1210.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_19">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="link_from_child" />
                         </Sequence.Variables>
@@ -415,7 +420,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="href" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="510,186" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
+                        <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="href" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="514.6666666666666,186" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
                           <ui:GetAttribute.Result>
                             <OutArgument x:TypeArguments="x:String">[link_from_child]</OutArgument>
                           </ui:GetAttribute.Result>
@@ -430,14 +435,14 @@
                             </ui:Target>
                           </ui:GetAttribute.Target>
                         </ui:GetAttribute>
-                        <If sap2010:Annotation.AnnotationText="Wenn der Link &quot;.pdf&quot; enthält und gleichzeitig NICHT &quot;Wrong&quot; enthält..." Condition="[link_from_child.Contains(&quot;.pdf&quot;) And Not link_from_child.Contains(&quot;Wrong&quot;)]" sap:VirtualizedContainerService.HintSize="510,519.3333333333334" sap2010:WorkflowViewState.IdRef="If_6">
+                        <If sap2010:Annotation.AnnotationText="Wenn der Link &quot;.pdf&quot; enthält und gleichzeitig NICHT &quot;Wrong&quot; enthält..." Condition="[link_from_child.Contains(&quot;.pdf&quot;) And Not link_from_child.Contains(&quot;Wrong&quot;)]" sap:VirtualizedContainerService.HintSize="514.6666666666666,897.3333333333334" sap2010:WorkflowViewState.IdRef="If_6">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="476,304.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                            <Sequence sap:VirtualizedContainerService.HintSize="480.6666666666667,682.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_20">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="file_name" />
                               </Sequence.Variables>
@@ -446,7 +451,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_6">
+                              <Assign sap:VirtualizedContainerService.HintSize="438.6666666666667,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_6">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[file_name]</OutArgument>
                                 </Assign.To>
@@ -454,7 +459,88 @@
                                   <InArgument x:TypeArguments="x:String">[link_from_child.Split("/").Last]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <uasf:DownloadFileFromUrl ResponseAttachment="{x:Null}" Timeout="{x:Null}" ConflictResolution="Rename" DisplayName="Download File from URL" FileName="[new_pdf_path +Path.DirectorySeparatorChar +file_name]" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="DownloadFileFromUrl_1" Url="[url +link_from_child]" />
+                              <TryCatch sap2010:Annotation.AnnotationText="Download versuchen. Wenn der Download nicht geht, beispielsweise bei fehlerhaftem Link, überspringen und Warnung loggen." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438.6666666666667,470" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <TryCatch.Try>
+                                  <uasf:DownloadFileFromUrl ResponseAttachment="{x:Null}" Timeout="{x:Null}" ConflictResolution="Rename" DisplayName="Download File from URL" FileName="[new_pdf_path +Path.DirectorySeparatorChar +file_name]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="DownloadFileFromUrl_1" Url="[url +link_from_child]" />
+                                </TryCatch.Try>
+                                <TryCatch.Catches>
+                                  <Catch x:TypeArguments="s:ArgumentException" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:ArgumentException">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:ArgumentException" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Warn" Message="[&quot;PDF download failed. No PDF under this link.&quot;]" />
+                                    </ActivityAction>
+                                  </Catch>
+                                  <Catch x:TypeArguments="s:NullReferenceException" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:NullReferenceException">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:NullReferenceException" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Warn" Message="[&quot;PDF download failed. No PDF under this link.&quot;]" />
+                                    </ActivityAction>
+                                  </Catch>
+                                  <Catch x:TypeArguments="si:IOException" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="si:IOException">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="si:IOException" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Error" Message="[&quot;PDF download failed. No PDF under this link.&quot;]" />
+                                    </ActivityAction>
+                                  </Catch>
+                                  <Catch x:TypeArguments="s:InvalidOperationException" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:InvalidOperationException">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:InvalidOperationException" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Warn" Message="[&quot;PDF download failed. No PDF under this link.&quot;]" />
+                                    </ActivityAction>
+                                  </Catch>
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:Exception">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Warn" Message="[&quot;PDF download failed. No PDF under this link.&quot;]" />
+                                    </ActivityAction>
+                                  </Catch>
+                                </TryCatch.Catches>
+                              </TryCatch>
                             </Sequence>
                           </If.Then>
                           <If.Else>
@@ -465,9 +551,9 @@
                     </ActivityAction>
                   </ui:ForEach.Body>
                 </ui:ForEach>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Finished first download page.&quot;]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="590.6666666666666,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Finished first download page.&quot;]" />
               </Sequence>
-              <Sequence DisplayName="Sequence - Download PDFs Page 2" sap:VirtualizedContainerService.HintSize="648,1612.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_22">
+              <Sequence DisplayName="Sequence - Download PDFs Page 2" sap:VirtualizedContainerService.HintSize="652.6666666666666,1990.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_22">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="children" />
                 </Sequence.Variables>
@@ -476,7 +562,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  3.html'" sap:VirtualizedContainerService.HintSize="586,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  3.html'" sap:VirtualizedContainerService.HintSize="590.6666666666666,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
                   <ui:Click.CursorPosition>
                     <ui:CursorPosition Position="Center">
                       <ui:CursorPosition.OffsetX>
@@ -498,7 +584,7 @@
                     </ui:Target>
                   </ui:Click.Target>
                 </ui:Click>
-                <ui:FindChildren Children="[children]" ContinueOnError="True" DisplayName="Find Children 'UL'" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="586,107.33333333333333" sap2010:WorkflowViewState.IdRef="FindChildren_3" Scope="FIND_DESCENDANTS">
+                <ui:FindChildren Children="[children]" ContinueOnError="True" DisplayName="Find Children 'UL'" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="590.6666666666666,107.33333333333333" sap2010:WorkflowViewState.IdRef="FindChildren_3" Scope="FIND_DESCENDANTS">
                   <ui:FindChildren.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6ae07d51-1eac-4a15-828d-0854faca4a6f" InformativeScreenshot="bfb8ccb0b569bf35bdb85e9f1f41030d" Selector="&lt;webctrl tag='UL' /&gt;">
                       <ui:Target.TimeoutMS>
@@ -510,13 +596,13 @@
                     </ui:Target>
                   </ui:FindChildren.Target>
                 </ui:FindChildren>
-                <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="586,1022.6666666666666" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[children]">
+                <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="590.6666666666666,1400.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[children]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="ui:UiElement">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="ui:UiElement" Name="current_child" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Hauptteil" sap:VirtualizedContainerService.HintSize="552,832.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                      <Sequence DisplayName="Hauptteil" sap:VirtualizedContainerService.HintSize="556.6666666666666,1210.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_23">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="link_from_child" />
                         </Sequence.Variables>
@@ -525,7 +611,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="href" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="510,186" sap2010:WorkflowViewState.IdRef="GetAttribute_3">
+                        <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="href" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="514.6666666666666,186" sap2010:WorkflowViewState.IdRef="GetAttribute_3">
                           <ui:GetAttribute.Result>
                             <OutArgument x:TypeArguments="x:String">[link_from_child]</OutArgument>
                           </ui:GetAttribute.Result>
@@ -540,14 +626,14 @@
                             </ui:Target>
                           </ui:GetAttribute.Target>
                         </ui:GetAttribute>
-                        <If sap2010:Annotation.AnnotationText="Wenn der Link &quot;.pdf&quot; enthält und gleichzeitig NICHT &quot;Wrong&quot; enthält..." Condition="[link_from_child.Contains(&quot;.pdf&quot;) And Not link_from_child.Contains(&quot;Wrong&quot;)]" sap:VirtualizedContainerService.HintSize="510,519.3333333333334" sap2010:WorkflowViewState.IdRef="If_7">
+                        <If sap2010:Annotation.AnnotationText="Wenn der Link &quot;.pdf&quot; enthält und gleichzeitig NICHT &quot;Wrong&quot; enthält..." Condition="[link_from_child.Contains(&quot;.pdf&quot;) And Not link_from_child.Contains(&quot;Wrong&quot;)]" sap:VirtualizedContainerService.HintSize="514.6666666666666,897.3333333333334" sap2010:WorkflowViewState.IdRef="If_7">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="476,304.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                            <Sequence sap:VirtualizedContainerService.HintSize="480.6666666666667,682.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_24">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="file_name" />
                               </Sequence.Variables>
@@ -556,7 +642,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
+                              <Assign sap:VirtualizedContainerService.HintSize="438.6666666666667,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[file_name]</OutArgument>
                                 </Assign.To>
@@ -564,7 +650,88 @@
                                   <InArgument x:TypeArguments="x:String">[link_from_child.Split("/").Last]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <uasf:DownloadFileFromUrl ResponseAttachment="{x:Null}" Timeout="{x:Null}" ConflictResolution="Rename" DisplayName="Download File from URL" FileName="[new_pdf_path +Path.DirectorySeparatorChar +file_name]" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="DownloadFileFromUrl_2" Url="[url +link_from_child]" />
+                              <TryCatch sap2010:Annotation.AnnotationText="Download versuchen. Wenn der Download nicht geht, beispielsweise bei fehlerhaftem Link, überspringen und Warnung loggen." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438.6666666666667,470" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <TryCatch.Try>
+                                  <uasf:DownloadFileFromUrl ResponseAttachment="{x:Null}" Timeout="{x:Null}" ConflictResolution="Rename" DisplayName="Download File from URL" FileName="[new_pdf_path +Path.DirectorySeparatorChar +file_name]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="DownloadFileFromUrl_2" Url="[url +link_from_child]" />
+                                </TryCatch.Try>
+                                <TryCatch.Catches>
+                                  <Catch x:TypeArguments="s:ArgumentException" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:ArgumentException">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:ArgumentException" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Warn" Message="[&quot;PDF download failed. No PDF under this link.&quot;]" />
+                                    </ActivityAction>
+                                  </Catch>
+                                  <Catch x:TypeArguments="s:NullReferenceException" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:NullReferenceException">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:NullReferenceException" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Warn" Message="[&quot;PDF download failed. No PDF under this link.&quot;]" />
+                                    </ActivityAction>
+                                  </Catch>
+                                  <Catch x:TypeArguments="si:IOException" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="si:IOException">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="si:IOException" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Warn" Message="[&quot;PDF download failed. No PDF under this link.&quot;]" />
+                                    </ActivityAction>
+                                  </Catch>
+                                  <Catch x:TypeArguments="s:InvalidOperationException" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:InvalidOperationException">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:InvalidOperationException" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Warn" Message="[&quot;PDF download failed. No PDF under this link.&quot;]" />
+                                    </ActivityAction>
+                                  </Catch>
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:Exception">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Warn" Message="[&quot;PDF download failed. No PDF under this link.&quot;]" />
+                                    </ActivityAction>
+                                  </Catch>
+                                </TryCatch.Catches>
+                              </TryCatch>
                             </Sequence>
                           </If.Then>
                           <If.Else>
@@ -587,7 +754,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:OpenBrowser>
     </Sequence>
-    <Sequence DisplayName="Sequence - Generate Output Argument" sap:VirtualizedContainerService.HintSize="806,226.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_16">
+    <Sequence DisplayName="Sequence - Generate Output Argument" sap:VirtualizedContainerService.HintSize="810.6666666666666,226.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_16">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>

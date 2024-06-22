@@ -205,7 +205,7 @@
     </Assign>
     <uoia:GenerateChatCompletion ActivityInstanceId="15c482c0-6a74-4fe2-8e09-9a24a38ffc61" sap2010:Annotation.AnnotationText="ChatGPT - Extract and structure invocie data as a string in the format of a JSON.&#xA;Input: pdf_text&#xA;Output: response" BindingsVersion="2.1" BusinessEntityName="Chatvervollständigung generieren" ConfiguredBusinessEntity="generateChatCompletion" ConnectionId="8a004e94-db95-449c-a9f8-a9953dc626b7" Connector="uipath-openai-openai" CrudOperation="Create" DesignConnectionEnabled="True" DisplayName="Generate Chat Completion" sap:VirtualizedContainerService.HintSize="434,233.33333333333334" sap2010:WorkflowViewState.IdRef="GenerateChatCompletion_1" Language="de">
       <uoia:GenerateChatCompletion.BusinessEntity>
-        <uibi:BusinessEntity Metadata="{x:Reference __ReferenceID14}" Name="generateChatCompletion">
+        <uibi:BusinessEntity Name="generateChatCompletion">
           <uibi:BusinessEntity.AllFields>
             <scg:List x:TypeArguments="uibi:EntityField" Capacity="15">
               <uiisi:OperationEntityField x:TypeArguments="uoic:GenerateChatCompletion" ArgumentDirection="In" ArgumentType="uoic:GenerateChatCompletion" DataType="GenerateChatCompletion" Description="The request data in JSON format for the chat completion" DisplayName="Completion Request" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsHidden="True" IsIdField="False" IsMandatory="True" IsParameter="True" IsPriority="False" IsSelected="False" Location="Undefined" Name="body" ShouldFilterOnChange="False" />
@@ -328,60 +328,60 @@ invoiceForwarded:
                   <Literal x:TypeArguments="x:String">gpt-4</Literal>
                 </uiisi:OperationEntityField.Value>
               </uiisi:OperationEntityField>
-              <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Int32)" InArgumentValue="{x:Reference __ReferenceID1}" Value="{x:Reference __ReferenceID0}" x:Name="__ReferenceID18" ArgumentDirection="In" ArgumentType="s:Nullable(x:Int32)" DataType="Int32" DefaultValue="1920" Description="Die maximale Anzahl von Token, die für die Eingabeaufforderung und die generierte Antwort zulässig sind. Weniger Token sind weniger teuer. Der Standardwert ist 3840." DisplayName="Max. Token" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsPriority="False" IsSelected="False" Location="Undefined" Name="body.max_tokens" Order="3" ShouldFilterOnChange="False">
-                <uiisi:OperationEntityField.ArgumentValue>
+              <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Int32)" ArgumentValue="{x:Reference __ReferenceID1}" Value="{x:Reference __ReferenceID0}" x:Name="__ReferenceID18" ArgumentDirection="In" ArgumentType="s:Nullable(x:Int32)" DataType="Int32" DefaultValue="1920" Description="Die maximale Anzahl von Token, die für die Eingabeaufforderung und die generierte Antwort zulässig sind. Weniger Token sind weniger teuer. Der Standardwert ist 3840." DisplayName="Max. Token" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsPriority="False" IsSelected="False" Location="Undefined" Name="body.max_tokens" Order="3" ShouldFilterOnChange="False">
+                <uiisi:OperationEntityField.InArgumentValue>
                   <InArgument x:TypeArguments="s:Nullable(x:Int32)" x:Name="__ReferenceID1">
                     <Literal x:TypeArguments="s:Nullable(x:Int32)" x:Name="__ReferenceID0" Value="1920" />
                   </InArgument>
-                </uiisi:OperationEntityField.ArgumentValue>
+                </uiisi:OperationEntityField.InArgumentValue>
                 <uiisi:OperationEntityField.Metadata>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <uiisi:CustomFieldsPriority x:Key="CustomFieldsPriority">Default</uiisi:CustomFieldsPriority>
                   </scg:Dictionary>
                 </uiisi:OperationEntityField.Metadata>
               </uiisi:OperationEntityField>
-              <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Int32)" InArgumentValue="{x:Reference __ReferenceID3}" Value="{x:Reference __ReferenceID2}" x:Name="__ReferenceID19" ArgumentDirection="In" ArgumentType="s:Nullable(x:Int32)" DataType="Int32" DefaultValue="1" Description="Eine Zahl von mindestens 1. Damit wird festgelegt, wie viele Auswahlmöglichkeiten für die Vervollständigung die KI zurückgibt. Der Standardwert ist 1." DisplayName="N" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsPriority="False" IsSelected="False" Location="Undefined" Name="body.n" Order="3" ShouldFilterOnChange="False">
-                <uiisi:OperationEntityField.ArgumentValue>
+              <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Int32)" ArgumentValue="{x:Reference __ReferenceID3}" Value="{x:Reference __ReferenceID2}" x:Name="__ReferenceID19" ArgumentDirection="In" ArgumentType="s:Nullable(x:Int32)" DataType="Int32" DefaultValue="1" Description="Eine Zahl von mindestens 1. Damit wird festgelegt, wie viele Auswahlmöglichkeiten für die Vervollständigung die KI zurückgibt. Der Standardwert ist 1." DisplayName="N" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsPriority="False" IsSelected="False" Location="Undefined" Name="body.n" Order="3" ShouldFilterOnChange="False">
+                <uiisi:OperationEntityField.InArgumentValue>
                   <InArgument x:TypeArguments="s:Nullable(x:Int32)" x:Name="__ReferenceID3">
                     <Literal x:TypeArguments="s:Nullable(x:Int32)" x:Name="__ReferenceID2" Value="1" />
                   </InArgument>
-                </uiisi:OperationEntityField.ArgumentValue>
+                </uiisi:OperationEntityField.InArgumentValue>
                 <uiisi:OperationEntityField.Metadata>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <uiisi:CustomFieldsPriority x:Key="CustomFieldsPriority">Default</uiisi:CustomFieldsPriority>
                   </scg:Dictionary>
                 </uiisi:OperationEntityField.Metadata>
               </uiisi:OperationEntityField>
-              <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Double)" InArgumentValue="{x:Reference __ReferenceID5}" Value="{x:Reference __ReferenceID4}" x:Name="__ReferenceID20" ArgumentDirection="In" ArgumentType="s:Nullable(x:Double)" DataType="Double" DefaultValue="1" Description="⌘ ⌥ K&#xA;Eine Zahl zwischen 0 und 2. Höhere Werte wie 0,8 machen die Ausgabe zufälliger, während niedrigere Werte wie 0,2 sie gezielter und deterministischer machen. Der Standardwert ist 1." DisplayName="Temperatur" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsPriority="False" IsSelected="False" Location="Undefined" Name="body.temperature" Order="3" ShouldFilterOnChange="False">
-                <uiisi:OperationEntityField.ArgumentValue>
+              <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Double)" ArgumentValue="{x:Reference __ReferenceID5}" Value="{x:Reference __ReferenceID4}" x:Name="__ReferenceID20" ArgumentDirection="In" ArgumentType="s:Nullable(x:Double)" DataType="Double" DefaultValue="1" Description="⌘ ⌥ K&#xA;Eine Zahl zwischen 0 und 2. Höhere Werte wie 0,8 machen die Ausgabe zufälliger, während niedrigere Werte wie 0,2 sie gezielter und deterministischer machen. Der Standardwert ist 1." DisplayName="Temperatur" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsPriority="False" IsSelected="False" Location="Undefined" Name="body.temperature" Order="3" ShouldFilterOnChange="False">
+                <uiisi:OperationEntityField.InArgumentValue>
                   <InArgument x:TypeArguments="s:Nullable(x:Double)" x:Name="__ReferenceID5">
                     <Literal x:TypeArguments="s:Nullable(x:Double)" x:Name="__ReferenceID4" Value="0.4" />
                   </InArgument>
-                </uiisi:OperationEntityField.ArgumentValue>
+                </uiisi:OperationEntityField.InArgumentValue>
                 <uiisi:OperationEntityField.Metadata>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <uiisi:CustomFieldsPriority x:Key="CustomFieldsPriority">Default</uiisi:CustomFieldsPriority>
                   </scg:Dictionary>
                 </uiisi:OperationEntityField.Metadata>
               </uiisi:OperationEntityField>
-              <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Double)" InArgumentValue="{x:Reference __ReferenceID7}" Value="{x:Reference __ReferenceID6}" x:Name="__ReferenceID21" ArgumentDirection="In" ArgumentType="s:Nullable(x:Double)" DataType="Double" DefaultValue="1" Description="Eine Zahl zwischen 0 und 1. Je niedriger die Zahl, desto weniger Token werden berücksichtigt. Der Standardwert ist 1." DisplayName="Erste P" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsPriority="False" IsSelected="False" Location="Undefined" Name="body.top_p" Order="3" ShouldFilterOnChange="False">
-                <uiisi:OperationEntityField.ArgumentValue>
+              <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Double)" ArgumentValue="{x:Reference __ReferenceID7}" Value="{x:Reference __ReferenceID6}" x:Name="__ReferenceID21" ArgumentDirection="In" ArgumentType="s:Nullable(x:Double)" DataType="Double" DefaultValue="1" Description="Eine Zahl zwischen 0 und 1. Je niedriger die Zahl, desto weniger Token werden berücksichtigt. Der Standardwert ist 1." DisplayName="Erste P" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsPriority="False" IsSelected="False" Location="Undefined" Name="body.top_p" Order="3" ShouldFilterOnChange="False">
+                <uiisi:OperationEntityField.InArgumentValue>
                   <InArgument x:TypeArguments="s:Nullable(x:Double)" x:Name="__ReferenceID7">
                     <Literal x:TypeArguments="s:Nullable(x:Double)" x:Name="__ReferenceID6" Value="1" />
                   </InArgument>
-                </uiisi:OperationEntityField.ArgumentValue>
+                </uiisi:OperationEntityField.InArgumentValue>
                 <uiisi:OperationEntityField.Metadata>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <uiisi:CustomFieldsPriority x:Key="CustomFieldsPriority">Default</uiisi:CustomFieldsPriority>
                   </scg:Dictionary>
                 </uiisi:OperationEntityField.Metadata>
               </uiisi:OperationEntityField>
-              <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Boolean)" InArgumentValue="{x:Reference __ReferenceID9}" Value="{x:Reference __ReferenceID8}" x:Name="__ReferenceID22" ArgumentDirection="In" ArgumentType="s:Nullable(x:Boolean)" DataType="Boolean" DefaultValue="false" Description="Ob teilweiser Fortschritt zurückgestreamt werden soll. Wenn diese Option festgelegt ist, werden die Token als reine Server-Ereignisse gesendet, sobald sie verfügbar sind, und der Stream wird durch die Meldung „data: [DONE]“ beendet. Der Standardwert ist „false“." DisplayName="Stream" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsPriority="False" IsSelected="False" Location="Undefined" Name="body.stream" Order="3" ShouldFilterOnChange="False">
-                <uiisi:OperationEntityField.ArgumentValue>
+              <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Boolean)" ArgumentValue="{x:Reference __ReferenceID9}" Value="{x:Reference __ReferenceID8}" x:Name="__ReferenceID22" ArgumentDirection="In" ArgumentType="s:Nullable(x:Boolean)" DataType="Boolean" DefaultValue="false" Description="Ob teilweiser Fortschritt zurückgestreamt werden soll. Wenn diese Option festgelegt ist, werden die Token als reine Server-Ereignisse gesendet, sobald sie verfügbar sind, und der Stream wird durch die Meldung „data: [DONE]“ beendet. Der Standardwert ist „false“." DisplayName="Stream" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsPriority="False" IsSelected="False" Location="Undefined" Name="body.stream" Order="3" ShouldFilterOnChange="False">
+                <uiisi:OperationEntityField.InArgumentValue>
                   <InArgument x:TypeArguments="s:Nullable(x:Boolean)" x:Name="__ReferenceID9">
                     <Literal x:TypeArguments="s:Nullable(x:Boolean)" x:Name="__ReferenceID8" Value="False" />
                   </InArgument>
-                </uiisi:OperationEntityField.ArgumentValue>
+                </uiisi:OperationEntityField.InArgumentValue>
                 <uiisi:OperationEntityField.Metadata>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <uiisi:CustomFieldsPriority x:Key="CustomFieldsPriority">Default</uiisi:CustomFieldsPriority>
@@ -395,24 +395,24 @@ invoiceForwarded:
                   </scg:Dictionary>
                 </uiisi:OperationEntityField.Metadata>
               </uiisi:OperationEntityField>
-              <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Double)" InArgumentValue="{x:Reference __ReferenceID11}" Value="{x:Reference __ReferenceID10}" x:Name="__ReferenceID24" ArgumentDirection="In" ArgumentType="s:Nullable(x:Double)" DataType="Double" DefaultValue="0" Description="Zahl zwischen -2,0 und 2,0. Bei positiven Werten werden neue Token auf der Grundlage geahndet, ob sie bisher im Text vorkommen, und die Wahrscheinlichkeit wird erhöht, dass das Modell über neue Themen spricht. Standardwert ist 0." DisplayName="Ahndung für Vorkommen" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsPriority="False" IsSelected="False" Location="Undefined" Name="body.presence_penalty" Order="3" ShouldFilterOnChange="False">
-                <uiisi:OperationEntityField.ArgumentValue>
+              <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Double)" ArgumentValue="{x:Reference __ReferenceID11}" Value="{x:Reference __ReferenceID10}" x:Name="__ReferenceID24" ArgumentDirection="In" ArgumentType="s:Nullable(x:Double)" DataType="Double" DefaultValue="0" Description="Zahl zwischen -2,0 und 2,0. Bei positiven Werten werden neue Token auf der Grundlage geahndet, ob sie bisher im Text vorkommen, und die Wahrscheinlichkeit wird erhöht, dass das Modell über neue Themen spricht. Standardwert ist 0." DisplayName="Ahndung für Vorkommen" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsPriority="False" IsSelected="False" Location="Undefined" Name="body.presence_penalty" Order="3" ShouldFilterOnChange="False">
+                <uiisi:OperationEntityField.InArgumentValue>
                   <InArgument x:TypeArguments="s:Nullable(x:Double)" x:Name="__ReferenceID11">
                     <Literal x:TypeArguments="s:Nullable(x:Double)" x:Name="__ReferenceID10" Value="0" />
                   </InArgument>
-                </uiisi:OperationEntityField.ArgumentValue>
+                </uiisi:OperationEntityField.InArgumentValue>
                 <uiisi:OperationEntityField.Metadata>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <uiisi:CustomFieldsPriority x:Key="CustomFieldsPriority">Default</uiisi:CustomFieldsPriority>
                   </scg:Dictionary>
                 </uiisi:OperationEntityField.Metadata>
               </uiisi:OperationEntityField>
-              <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Double)" InArgumentValue="{x:Reference __ReferenceID13}" Value="{x:Reference __ReferenceID12}" x:Name="__ReferenceID25" ArgumentDirection="In" ArgumentType="s:Nullable(x:Double)" DataType="Double" DefaultValue="0" Description="Zahl zwischen -2,0 und 2,0. Bei positiven Werten werden neue Token auf der Grundlage ihrer bisherigen Häufigkeit im Text geahndet und die Wahrscheinlichkeit wird verringert, dass das Modell dieselbe Zeile wortwörtlich wiederholt. Der Standardwert ist 0." DisplayName="Ahndung für Häufigkeit" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsPriority="False" IsSelected="False" Location="Undefined" Name="body.frequency_penalty" Order="3" ShouldFilterOnChange="False">
-                <uiisi:OperationEntityField.ArgumentValue>
+              <uiisi:OperationEntityField x:TypeArguments="s:Nullable(x:Double)" ArgumentValue="{x:Reference __ReferenceID13}" Value="{x:Reference __ReferenceID12}" x:Name="__ReferenceID25" ArgumentDirection="In" ArgumentType="s:Nullable(x:Double)" DataType="Double" DefaultValue="0" Description="Zahl zwischen -2,0 und 2,0. Bei positiven Werten werden neue Token auf der Grundlage ihrer bisherigen Häufigkeit im Text geahndet und die Wahrscheinlichkeit wird verringert, dass das Modell dieselbe Zeile wortwörtlich wiederholt. Der Standardwert ist 0." DisplayName="Ahndung für Häufigkeit" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsHidden="False" IsIdField="False" IsMandatory="False" IsPriority="False" IsSelected="False" Location="Undefined" Name="body.frequency_penalty" Order="3" ShouldFilterOnChange="False">
+                <uiisi:OperationEntityField.InArgumentValue>
                   <InArgument x:TypeArguments="s:Nullable(x:Double)" x:Name="__ReferenceID13">
                     <Literal x:TypeArguments="s:Nullable(x:Double)" x:Name="__ReferenceID12" Value="0" />
                   </InArgument>
-                </uiisi:OperationEntityField.ArgumentValue>
+                </uiisi:OperationEntityField.InArgumentValue>
                 <uiisi:OperationEntityField.Metadata>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <uiisi:CustomFieldsPriority x:Key="CustomFieldsPriority">Default</uiisi:CustomFieldsPriority>
@@ -436,17 +436,16 @@ invoiceForwarded:
             </scg:List>
           </uibi:BusinessEntity.AllFields>
           <uibi:BusinessEntity.EntityMetadata>
-            <uibi:EntityMetadata DisplayName="Chatvervollständigung generieren" EligibleOperations="1" IsCustomEntity="False" Name="generateChatCompletion">
-              <uibi:EntityMetadata.Metadata>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object" x:Name="__ReferenceID14">
-                  <x:String x:Key="Object">generateChatCompletion</x:String>
-                  <x:String x:Key="Client">UiPath.OpenAI.IntegrationService.Client.GenerateChatCompletionAPIClient</x:String>
-                  <x:String x:Key="Operation">CreateGenerateChatCompletion</x:String>
-                  <x:String x:Key="Path">/generateChatCompletion</x:String>
-                </scg:Dictionary>
-              </uibi:EntityMetadata.Metadata>
-            </uibi:EntityMetadata>
+            <uibi:EntityMetadata Metadata="{x:Reference __ReferenceID14}" DisplayName="Chatvervollständigung generieren" EligibleOperations="1" IsCustomEntity="False" Name="generateChatCompletion" />
           </uibi:BusinessEntity.EntityMetadata>
+          <uibi:BusinessEntity.Metadata>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object" x:Name="__ReferenceID14">
+              <x:String x:Key="Object">generateChatCompletion</x:String>
+              <x:String x:Key="Client">UiPath.OpenAI.IntegrationService.Client.GenerateChatCompletionAPIClient</x:String>
+              <x:String x:Key="Operation">CreateGenerateChatCompletion</x:String>
+              <x:String x:Key="Path">/generateChatCompletion</x:String>
+            </scg:Dictionary>
+          </uibi:BusinessEntity.Metadata>
           <uibi:BusinessEntity.SelectedFields>
             <scg:List x:TypeArguments="uibi:EntityField" Capacity="16">
               <x:Reference>__ReferenceID15</x:Reference>
